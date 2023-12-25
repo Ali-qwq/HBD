@@ -1,0 +1,96 @@
+<!DOCTYPR html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Birthday Gift - CodeMasala</title>
+        
+        <!-- Link CSS Style.css file-->
+        
+        <link rel="stylesheet" href="css/style.css">
+        
+    </head>
+    <body dir="rtl">
+        
+        <script>document.addEventListener('DOMContentLoaded',function(event){
+            var dataText = [ "الله يسعدك دنيا وآخرة زي ما أسعدتيني💖"];
+                  function typeWriter(text, i, fnCallback) {
+              if (i < (text.length)) {
+               document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+                    setTimeout(function() {
+                  typeWriter(text, i + 1, fnCallback)
+                }, 100);
+              }
+              else if (typeof fnCallback == 'function') {
+                setTimeout(fnCallback, 10);
+              }
+            }
+             function StartTextAnimation(i) {
+               if (typeof dataText[i] == 'undefined'){
+                  setTimeout(function() {
+                    StartTextAnimation(0);
+                  }, 500);
+               }
+              if (i < dataText[i].length) {
+               typeWriter(dataText[i], 0, function(){
+                 StartTextAnimation(i + 1);
+               });
+              }
+            }
+            StartTextAnimation(0);
+          });
+          </script>
+          
+        <div class='moon'>
+            <div class='crater1'></div>
+            <div class='crater2'></div>
+            <div class='crater3'></div>
+        </div>
+        
+        <canvas id="canvas"></canvas>
+        
+        <div id="sea"></div>
+        <div id="beach"></div>
+        
+        <img src="https://dl.dropbox.com/s/2k0mtrxc2dqurmh/jumping.png" alt="Jumping-people" id="people" />
+        
+        <div id="merrywrap" class="merrywrap">
+            <div class="giftbox">
+                <div class="cover">
+                    <div></div>
+                </div>
+                
+                <div class="box"></div>
+            </div>
+            
+            <div dir="ltr" class="icons">
+                <div class="row">
+                    <span>H</span>
+                    <span>a</span>
+                    <span>p</span>
+                    <span>p</span>
+                    <span>y</span>
+                    
+                </div>
+                <div class="row">
+                    <span>B</span>
+                    <span>i</span>
+                    <span>r</span>
+                    <span>t</span>
+                    <span>h</span>
+                    <span>d</span>
+                    <span>a</span>
+                    <span>y</span>
+                </div>
+                
+                
+            </div>
+        </div>
+        <h1 id="thisis">💖الله يسعدك دنيا وآخرة زي ما أسعدتيني</h1>
+        <div id="video"></div>
+    
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>
